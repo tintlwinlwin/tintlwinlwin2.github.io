@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.thalesgroup.tdi.whitelabelapp",
+    "sha256_cert_fingerprints":
+    ["79:9F:FA:B4:56:31:3A:91:6E:18:27:E4:97:7E:87:4A:AC:DA:14:81:C5:2E:3B:DB:B7:2B:6A:1A:21:56:A1:83"]
+  }
+}]
