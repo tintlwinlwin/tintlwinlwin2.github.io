@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Get Started - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="index.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="api.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#add-tdi-sdk-to-your-android-project" class="nav-link">Add TDI SDK to your Android Project</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#local-repository-and-components" class="nav-link">Local Repository and Components</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#add-the-sdk" class="nav-link">Add the SDK</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#repository-content" class="nav-link">Repository content</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="add-tdi-sdk-to-your-android-project">Add TDI SDK to your Android Project</h1>
+<p></br></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<hr />
+<ul>
+<li>Min Android SDK version: 6 (23) Marshmallow</li>
+<li>Supported architectures: <strong>ARMv7</strong> and <strong>ARM64</strong></li>
+</ul>
+<p></br></p>
+<h2 id="local-repository-and-components">Local Repository and Components</h2>
+<hr />
+<p>The SDK requires local Maven repository with the following content:</p>
+<table>
+<thead>
+<tr>
+<th>Component (armeAbi-v7a + arm64-v8a)</th>
+<th>Size (real)</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TDI</td>
+<td>6.5Mb</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Document Capture (1)</td>
+<td>13.7Mb</td>
+<td>IDV</td>
+</tr>
+<tr>
+<td>Face Capture (1)</td>
+<td>21.7Mb</td>
+<td>IDV</td>
+</tr>
+<tr>
+<td>MRZ Capture (1)</td>
+<td>9.2Mb</td>
+<td>IDV</td>
+</tr>
+<tr>
+<td>NFC Capture (1)</td>
+<td>1.6Mb</td>
+<td>IDV</td>
+</tr>
+<tr>
+<td>Non-ID Document Capture (1)</td>
+<td>3.5Mb</td>
+<td>TDI component</td>
+</tr>
+<tr>
+<td>Voice Capture (1)</td>
+<td>0.1Mb</td>
+<td>TDI component</td>
+</tr>
+<tr>
+<td>Fingerprint Capture (1)</td>
+<td>30Mb</td>
+<td>TDI component</td>
+</tr>
+<tr>
+<td><strong>Repository</strong></td>
+<td><strong>83 or 87Mb</strong> (2)</td>
+<td><strong>Total</strong></td>
+</tr>
+</tbody>
+</table>
+<p>(1) You can remove from the repository each Capture component that you don't need.
+</br>
+(2) Using Android App Bundles publication, final APK size will be smaller</p>
+<p>Contracts/signature and voice captors are embedded into TDI sdk.</p>
+<p><a href="ressources\TDI_Android_SDKs_Delivery.xlsx">Here</a> is an interactive Excel Sheet with more details by Architecture. You can select (Yes or No) the Optional components needed.</p>
+<p></br></p>
+<h2 id="permissions">Permissions</h2>
+<hr />
+<p>TDI SDK needs to have some permissions granted in order to be able to gather and operate over the desired data.</p>
+<p>Rermissions already requested by TDI SDK when needed.</p>
+<p> <pre><code class=xml>&lt;manifest
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    package=&quot;your.package.name&quot;&gt;
+
+    &lt;!-- Access to TDI server --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+
+    &lt;!-- Taking picture to capture Documents and Face and FingerPrint --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
+
+    &lt;!-- Voice captor --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.RECORD_AUDIO&quot; /&gt;
+
+    &lt;!-- Check if connect to Network --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
+
+    &lt;!-- Fingerprint captor --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot;
+
+    &lt;!-- Save report - optional --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;
+
+        [...]
+&lt;/manifest&gt;
+</code></pre></p>
+<p>Check <a href="https://developer.android.com/training/permissions/requesting" target="_blank">Android docs</a> to request permissions at runtime.</p>
+<p></br></p>
+<h2 id="add-the-sdk">Add the SDK</h2>
+<hr />
+<p>For the purpose of this example we will be using Android Studio + Android SDK. They can be obtained <a href="https://developer.android.com/studio/index.html" target="_blank">here</a></p>
+<p>Assuming the client application already exists in a given project, we need to include the TDI library repository as a separate module within that project.</p>
+<p><strong>Project build.gradle:</strong></p>
+<p> <pre><code class=groovy>buildscript {
+    [...]
+    ext {
+        [...]
+        projectMavenRepository = &quot;${rootProject.rootDir}/../repository&quot;
+    }
+}
+
+[...]
+
+subprojects {
+    repositories {
+        maven { url uri(projectMavenRepository) }
+        google()
+        jcenter()
+    }
+    [...]
+}
+</code></pre></p>
+<p><strong>Application build.gradle:</strong></p>
+<p> <pre><code class=groovy>dependencies {
+    implementation ('com.gemalto.tdi:tdi_sdk:2.0.0@aar'){
+        transitive = true
+    }
+    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+    [...]
+}
+</code></pre></p>
+<p></br></p>
+<h2 id="repository-content">Repository content</h2>
+<hr />
+<p> <pre><code class=groovy>TDI repository
++--repository
+    +--com
+        +--nudetect (Risk managment)
+        |   +--nudetect_sdk
+        |   |   +--2.4.1
+        |   |   |   |--nudetect_sdk-2.4.1.aar
+        |   |   |   |--nudetect_sdk-2.4.1.pom
+        |   |   |--maven-metadata.xml
+        +--thalesgroup
+            +--dis
+                +--idcloud
+                |   +--risk_sdk (Risk managment)
+                |   |   +--1.1.0
+                |   |   |   |--risk_sdk-1.1.0.aar
+                |   |   |   |--risk_sdk-1.1.0.pom
+                |   |   |--maven-metatdata.xml              
+                +--idv
+                |   +--idv_doc_sdk (ID Document Capture)
+                |   |   +--4.5.0
+                |   |   |   |--idv_doc_sdk-4.5.0.aar
+                |   |   |   |--idv_doc_sdk-4.5.0.pom
+                |   |   |--maven-metatdata.xml
+                |   +--idv_face_sdk (Face Capture)
+                |   |   +--4.4.1
+                |   |   |   |--idv_face_sdk-4.4.1.aar
+                |   |   |   |--idv_face_sdk-4.4.1.pom
+                |   |   |--maven-metatdata.xml
+                |   +--idv_nfc_sdk (NFC Document Capture)
+                |   |   +--4.2.1
+                |   |   |   |--idv_nfc_sdk-4.2.1.aar
+                |   |   |   |--idv_nfc_sdk-4.2.1.pom
+                |   |   |--maven-metatdata.xml
+                |   +--idv_mrz_sdk (MRZ Document Capture)
+                |   |   +--4.2.1
+                |   |   |   |--idv_mrz_sdk-4.2.1.aar
+                |   |   |   |--idv_mrz_sdk-4.2.1.pom
+                |   |   |--maven-metatdata.xml
+                |   +--idv_nfc_library_sdk (MRZ/NFC capture library)
+                |   |   +--4.2.1
+                |   |   |   |--idv_nfc_library_sdk-4.2.1.aar
+                |   |   |   |--idv_nfc_library_sdk-4.2.1.pom
+                |   |   |--maven-metatdata.xml              
+                +--tdi
+                |   +--tdi_sdk
+                |   |   +--2.0.0
+                |   |   |   |--tdi_sdk-2.0.0.aar
+                |   |   |   |--tdi_sdk-2.0.0.pom
+                |   |   |--maven-metatdata.xml
+                |   +--document_scan_library_sdk (Non-ID Document Capture library)
+                |   |   +--2.0.0
+                |   |   |   |--document_scan_library_sdk-2.0.0.aar
+                |   |   |   |--document_scan_library_sdk-2.0.0.pom
+                |   |   |--maven-metatdata.xml
+                |   +--tool
+                |   |   +--fotoapparat_sdk (Non-ID Document Capture)
+                |   |   |   +--1.0.0
+                |   |   |   |   |--fotoapparat_sdk-1.0.0.aar
+                |   |   |   |   |--fotoapparat_sdk-1.0.0.pom
+                |   |   |   |--maven-metatdata.xml
+                |   |   +--pdfview_sdk (Contract)
+                |   |   |   +--1.0.0
+                |   |   |   |   |--pdfview_sdk-1.0.0.aar
+                |   |   |   |   |--pdfview_sdk-1.0.0.pom
+                |   |   |   |--maven-metatdata.xml
+                |   |   +--smartcropper_sdk (Non-ID Document Capture)
+                |   |   |   +--2.0.0
+                |   |   |   |   |--smartcropper_sdk-2.0.0.aar
+                |   |   |   |   |--smartcropper_sdk-2.0.0.pom
+                |   |   |   |--maven-metatdata.xml
+                |   +--voice_library_sdk (Voice Capture library)
+                |   |   +--2.0.0
+                |   |   |   |--voice_library_sdk-2.0.0.aar
+                |   |   |   |--voice_library_sdk-2.0.0.pom
+                |   |   |--maven-metatdata.xml
+                |   +--fingerprint_sdk (FingerPrint Capture library)
+                |   |   +-- fingerprint-library-sdk
+                |   |   |   +--1.0.0
+                |   |   |   |   |--fingerprint-library-sdk-1.0.0.aar
+                |   |   |   |   |--fingerprint-library-sdk-1.0.0.pom
+                |   |   |   |--maven-metatdata.xml
+                |   |   +-- veridium-*****-sdk (6 Veridium AAR)
+
+</code></pre></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

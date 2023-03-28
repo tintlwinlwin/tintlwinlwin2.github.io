@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Selfie Capture - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item active">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="capture_tools_id_document_capture.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="capture_tools_native_id_document_capture.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#selfie-face-capture" class="nav-link">Selfie / Face Capture</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#a-thales-tool-from-idv" class="nav-link">A Thales tool from IDV</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#captors" class="nav-link">Captors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#customization" class="nav-link">Customization</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#frontal-face-detection" class="nav-link">Frontal Face Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#open-eyes-detection" class="nav-link">Open Eyes Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#mouth-close-detection" class="nav-link">Mouth Close Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#no-eye-shadow-detection" class="nav-link">No Eye Shadow Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#no-glare-detection" class="nav-link">No Glare Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#no-glasses-detection" class="nav-link">No Glasses Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#no-tinted-glasses-detection" class="nav-link">No tinted Glasses Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#exposure-detection" class="nav-link">Exposure Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#sharp-detection" class="nav-link">Sharp Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#h-centered-detection" class="nav-link">H Centered Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#v-centered-detection" class="nav-link">V Centered Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#gaze-detection" class="nav-link">Gaze Detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#number-of-frames" class="nav-link">Number of Frames</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#jpeg-quality" class="nav-link">JPEG Quality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#skippable" class="nav-link">Skippable</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#shutter-button-delay" class="nav-link">Shutter Button Delay</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#camera-selection" class="nav-link">Camera selection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#captor-callback" class="nav-link">Captor Callback</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#the-api-of-idv-is-accessible" class="nav-link">The API of IDV is accessible</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#help-for-integration" class="nav-link">Help for integration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="selfie-face-capture">Selfie / Face Capture</h1>
+<p></br></p>
+<h2 id="a-thales-tool-from-idv">A Thales tool from IDV</h2>
+<hr />
+<p>Current version: 4.4.1</p>
+<p>License required, to be provided at SDK <a href="api.html#initialize">initialization</a>.</p>
+<p>This tool will help you to Capture a portrait photo and detect if you are live in front of your camera, meaning you aren't using printed photo or video. </p>
+<p>Locally the tool only checks good face detection on good light conditions for analysis. If you try to fake the capture, expect errors from the tool or final result. </p>
+<p>Liveness verification is done by backend server. </p>
+<p>The portrait taken here will also be used to do face matching with the ID Document.</p>
+<p><img alt="" src="img/idv_face_capture.jpg" />
+<img alt="" src="img/idv_face_validation.jpg" /></p>
+<p>The SDK is having for that 1 Captor that will be used automatically when your are using the API <a href="api.html#resume">session.resume(taskID)</a> and we offer some customization.</p>
+<p></br></p>
+<h2 id="captors">Captors</h2>
+<hr />
+<p> <pre><code class=kotlin>val tdiMobileSdk = TdiMobileSdk.getInstance()
+tdiMobileSdk.captorProvider[&quot;Selfie&quot;]
+</code></pre></p>
+<p></br></p>
+<h2 id="customization">Customization</h2>
+<hr />
+<p><strong>Captors configuration:</strong></p>
+<p>Captors can get a config Map<key,value> to set different capture parameters.</p>
+<p> <pre><code class=kotlin>TdiMobileSdk.getInstance().tdiMobileSdk.captorProvider[&quot;Selfie&quot;]?.config = mutableMapOf()
+
+&quot;EXTRA_FRONTAL_FACE_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_EYES_OPEN_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_MOUTH_CLOSE_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_NO_EYE_SHADOW_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_NO_GLARE_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_NO_GLASSES_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_NO_TINTED_GLASSES_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_EXPOSURE_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_SHARP_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_H_CENTERED_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_V_CENTERED_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_GAZE_CHECK&quot; to Configuration.Enabled, // Enabled, Disabled
+&quot;EXTRA_NUMBER_OF_FRAMES&quot; to 3, // Number of images captured and returned
+&quot;EXTRA_JPEG_QUALITY&quot; to 90, // Captured image JPEG compression quality
+&quot;EXTRA_CAPTOR_SKIPPABLE&quot; to true, // Display a SKIP button allowing user to skip the capture. false by default
+&quot;EXTRA_CAPTURE_SHUTTER_BUTTON_DELAY&quot; to 15, // Display shutter button after n seconds
+&quot;EXTRA_CAMERA_SIDE&quot; to 0, // Select the camera (Front or rear)
+&quot;EXTRA_CAPTOR_CALLBACK&quot; to captorCallback // see below Captor Callback section
+</code></pre></p>
+<h3 id="frontal-face-detection"><strong>Frontal Face Detection</strong></h3>
+<p>An image is considered valid when the face is looking front. This is when there is no tilt, it is not rotated and it does not look up or down.    </p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="open-eyes-detection"><strong>Open Eyes Detection</strong></h3>
+<p>This check if both eyes are open. If one eye is open, the check will fail as the image is not being considered valid.</p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="mouth-close-detection"><strong>Mouth Close Detection</strong></h3>
+<p>Enabling this check, the SDK verify that the mouth is closed.</p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="no-eye-shadow-detection"><strong>No Eye Shadow Detection</strong></h3>
+<p>To capture a valid face image, the existence of eye`s shadow can be checked aswell.</p>
+<ul>
+<li><strong>Disabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="no-glare-detection"><strong>No Glare Detection</strong></h3>
+<p>The SDK can check if there is a glare while capturing the face that could invalidate the image.</p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="no-glasses-detection"><strong>No Glasses Detection</strong></h3>
+<p>When enabled, the SDK will check if the person is wearing glasses or not.</p>
+<ul>
+<li><strong>Disabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="no-tinted-glasses-detection"><strong>No tinted Glasses Detection</strong></h3>
+<p>To check if the person are wearing tinted glasses or not.</p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="exposure-detection"><strong>Exposure Detection</strong></h3>
+<p>The SDK can check if there is much exposure while capturing the face that could invalidate the image.   </p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="sharp-detection"><strong>Sharp Detection</strong></h3>
+<p>Enabling this check, the SDK detect if the images are being sharp enough, without much noise and with good quality.</p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="h-centered-detection"><strong>H Centered Detection</strong></h3>
+<p>To check if the face is horizontally centered.</p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="v-centered-detection"><strong>V Centered Detection</strong></h3>
+<p>To check if the face is vertically centered.</p>
+<ul>
+<li><strong>Disabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="gaze-detection"><strong>Gaze Detection</strong></h3>
+<p>To check if the person is looking straight.</p>
+<ul>
+<li><strong>Enabled</strong> is the default value for this check.</li>
+</ul>
+<h3 id="number-of-frames"><strong>Number of Frames</strong></h3>
+<p>The number of frames returned by the SDK can be configured with this parameter. This configuration indicates the number of consecutives face detections needed to launch a success. </p>
+<ul>
+<li><strong>value</strong> Number of images captured and returned. Default value is <strong>3</strong>.</li>
+</ul>
+<p>Take care of how many frames are set, since the images are a big memory consumer, memory warnings can be thrown by system.</p>
+<h3 id="jpeg-quality"><strong>JPEG Quality</strong></h3>
+<p>JPEG compression for captured image to avoid sending of high resolution portrait to backend.</p>
+<ul>
+<li><strong>value</strong> JPEG compression value from 1 to 100 (very bad quality to very good quality), default value is <strong>90</strong>, do not decrease this value below 80. </li>
+</ul>
+<p>To disable compression set the value to 0</p>
+<h3 id="skippable"><strong>Skippable</strong></h3>
+<ul>
+<li>
+<p><strong>true</strong> to display the SKIP button to allow user to skip the capture</p>
+</li>
+<li>
+<p><strong>false</strong> default value, to hide the SKIP button, user must process the capture</p>
+</li>
+</ul>
+<p>This setting is overrided by the Profile API</p>
+<h3 id="shutter-button-delay"><strong>Shutter Button Delay</strong></h3>
+<p>Default value is -1, no shutter button will be shown by default. The purpose of this button is to help end user in difficult environment that won't allow the automatic capture. This button can be display if you need after n second.</p>
+<p>If you decided to use this, please provide Int value in seconds</p>
+<blockquote>
+<p><strong>⚠ WARNING:</strong> </p>
+<p>The usage of manual capture could lead lower photo quality for the Backend to do the Face matching and Liveness check.</p>
+</blockquote>
+<h3 id="camera-selection"><strong>Camera selection</strong></h3>
+<ul>
+<li>
+<p><strong>0</strong> default value, select the front camera</p>
+</li>
+<li>
+<p><strong>1</strong> Select the rear camera</p>
+</li>
+<li>
+<p><strong>2</strong> Select the front camera, a flip button allow to switch to the rear camera</p>
+</li>
+<li>
+<p><strong>3</strong> Select the rear camera, a flip button allow to switch to the front camera</p>
+</li>
+</ul>
+<p>Click on <img alt="" src="img/idv_face_flip_camera.jpg" /> icon to toggle the camera</p>
+<h3 id="captor-callback"><strong>Captor Callback</strong></h3>
+<p> <pre><code class=kotlin>val captorCallback = object : Captor.Callback{
+    override fun onDataCaptured(input: Input) {
+        input.pages[&quot;page1&quot;] // Selfie
+    }
+
+    override fun onFailure(failure: Failure) {
+        // Capture failed, see Error guide chapter to identify what's the reason.
+    }
+}
+</code></pre></p>
+<p>Captor.Callback is an optional config to help you to:</p>
+<ol>
+<li>
+<p>Collect the data captured during a call of resume() API. Those data are automatically sent to server by TDI sdk after Capture, what you get here, is only for you if you need. Please be sure to keep it safe.</p>
+</li>
+<li>
+<p>Listening what's happening on Failure scenario, see Error guide Chapter for reference. It could be a simple Cancel by pressing Back button or tool issue.</p>
+</li>
+</ol>
+<p></br></p>
+<h2 id="the-api-of-idv-is-accessible">The API of IDV is accessible</h2>
+<hr />
+<p>For more customization, if you don't want to use the Captors we developed, you can develop your own using the IDV tools.</p>
+<p>You can like this develop your own Capture and add it to the <em>TDI: Captor Provider list</em> for more automation.</p>
+<h3 id="help-for-integration">Help for integration</h3>
+<div class="admonition note">
+<p>See IDV Documentation: <a href="ressources\idv\IDV_FACE-4.4.1.zip">IDV_FACE-4.4.1.zip</a> </p>
+</div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

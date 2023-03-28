@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>API - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="get_started_android.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="capture_tools_main.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#sdk-api" class="nav-link">SDK API</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#starting-methods" class="nav-link">Starting methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#checklist-before-starting" class="nav-link">Checklist before starting:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#initialize" class="nav-link">Initialize</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#listener" class="nav-link">Listener</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#get-profile" class="nav-link">Get Profile</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-session" class="nav-link">New Session</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#start" class="nav-link">Start</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resume" class="nav-link">Resume</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#result" class="nav-link">Result</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#update" class="nav-link">Update</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stop" class="nav-link">Stop</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tdi-open-models" class="nav-link">TDI Open Models</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#captorprovider" class="nav-link">CaptorProvider</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#scenario-flows" class="nav-link">Scenario flows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="sdk-api">SDK API</h1>
+<p></br></p>
+<h3 id="starting-methods"><strong>Starting methods</strong></h3>
+<p>TDI SDK will help you to manage a non linear flow of Tasks.</p>
+<p>Application is responsible of the List of Task that the SDK will provide to it by using Initialize and Start  API.</p>
+<p>Any Task can be executed with Resume API, in any order, using TDI predefined Capture or your own one. See below how to define your own capture document.</p>
+<p>Once all Task have been done, SDK will wait for FCM push to come, about 10sec after last Task, to send back the results of the document verification.</p>
+<p></br></p>
+<h3 id="checklist-before-starting"><strong>Checklist before starting:</strong></h3>
+<p>Make sure you have all of the following element to be able to do the integration. If anything missing, please come back to us and we will provide it to you.</p>
+<ol>
+<li>TDI Server URL</li>
+<li>Scenario name</li>
+<li>Tenant ID</li>
+<li>KeyCloak credential (login / password) and URL (different from TDI server), to generate JWT</li>
+<li>IDV License, for Document capture</li>
+</ol>
+<p></br></p>
+<h2 id="initialize">Initialize</h2>
+<hr />
+<p>First step you will need to create an instance of TDI with application context as parameter and Licenses if any.</p>
+<p> <pre><code class=kotlin>override fun onCreate(savedInstanceState: Bundle?) {
+    TdiMobileSdk.initialize(this, mutableMapOf(
+        &quot;EXTRA_IDV_LICENSE&quot; to &quot;XXXX&quot; // xxxx is the IDV license file provided by IBS team
+    ))
+}
+</code></pre></p>
+<p></br></p>
+<h2 id="listener">Listener</h2>
+<hr />
+<p>Create TDI listener to get current Profile Information, Status, List of Tasks and Results.</p>
+<ul>
+<li>
+<p>Profile Information will help you to customize your App from Server - see <a href="profile_api.html" target="_blank">Profile Api page</a></p>
+</li>
+<li>
+<p>Status:</p>
+<p><strong>CREATED</strong>: Session have been open in SDK.</p>
+<p><strong>ACTION</strong>: Scenario is on going in this state you have Tasks to execute using resume() API see below.</p>
+<p><strong>PENDING</strong>: Server is processing something, client should wait until server will ping SDK when things are ready using FCM push. (Fallback mechanims is recommended, e.g: wait 15sec and manually call result() API see below)</p>
+<p><strong>COMPLETED</strong>: Scenario arrived to an end (Good or Bad), you will need to check the Result for details</p>
+</li>
+<li>
+<p>Tasks: list of Tasks to do to execute the Scenario. Exectute Tasks with Task.status = Waiting only. Running tasks are things executing on Server side.</p>
+</li>
+<li>
+<p>Result: composed of a code, message and a Map<String,String> containing configurable element like is OCR OK / KO, is Face Matching OK / KO, First name, Last name...</p>
+<p>Code = 0 -&gt; Scenario is executing normally</p>
+<p>Code != 0 -&gt; See <a href="error_guide.html" target="_blank">Error Guide</a> , Result is returning HTTP errors, Parsing errors, Encryption errors.</p>
+</li>
+</ul>
+<p>You need to extend the activity where you want to catch this event and override <em>invoke</em> function like below</p>
+<p> <pre><code class=kotlin>class MainActivity : (ProfileInfo?, Status,MutableList&lt;Task&gt;?,Result?) -&gt; Unit {
+    override operator fun invoke(profileInfo: ProfileInfo?, status: Status, task: MutableList&lt;Task&gt;?,result: Result?) {
+        //Error management
+        if(result.code != 0){ // HTTP, Parsing, Encryption or Server errors can be caught here
+            Log.e(TAG, &quot;Code: ${result.code}, Message: ${result.message} &quot;) // Refer to the Error guide
+        }
+
+        //Update you list of Task
+        task?.let {
+            tasks.clear()
+            tasks.addAll(it)
+        }
+
+        //Check the current status
+        when (status) {
+            Status.CREATED -&gt; Log.d(TAG, &quot;New Session created and nothing to do&quot;)
+            Status.ACTION -&gt; Log.d(TAG, &quot;Execute task from the list provided&quot;)
+            Status.PENDING -&gt; Log.d(TAG, &quot;Server is running, please wait&quot;)
+            Status.COMPLETED -&gt; {
+                Log.d(TAG, &quot;Scenario is Done, you can collect the Result&quot;)
+                result?.let { // If not empty
+                    Log.d(TAG, &quot;${result.description}&quot;) // Print the Result HashMap
+                }
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        [...] //After initialize
+        val tdiMobileSdk = TdiMobileSdk.getInstance()
+        tdiMobileSdk.taskStateListener = this //Register the Listener in the SDK
+    }
+}
+</code></pre></p>
+<p></br></p>
+<h2 id="get-profile">Get Profile</h2>
+<hr />
+<p>Get Profile is an <strong>optional</strong> API which can help you to automate the execution of your Workflow, share some settings for the Captures or your Application and help for Localization - see <a href="profile_api.html" target="_blank">Profile API</a></p>
+<p>If you don't need any of those, you can skip this call. From 2.0.0 this API is not mandatory anymore for DEP encryption and Contract capture.</p>
+<ul>
+<li><strong>tdiServerURL</strong> = The server which TDI SDK will communicate to get Scenario to execute.</li>
+<li><strong>jwtToken</strong> = Security token unique to the session with an expiration time to 15min.</li>
+</ul>
+<p> <pre><code class=kotlin>tdiMobileSdk.getProfile(tdiServerURL: String, jwtToken: String)
+</code></pre></p>
+<p></br></p>
+<h2 id="new-session">New Session</h2>
+<hr />
+<p>To open a Session, you will need :</p>
+<ul>
+<li><strong>tdiServerURL</strong> = The server which TDI SDK will communicate to get Scenario to execute.</li>
+<li><strong>scenarioName</strong>  = Name of the workflow that need to be executed.</li>
+<li><strong>jwtToken</strong> = Security token unique to the session with an expiration time to 15mn.</li>
+<li><strong>postScenarioInput</strong><em> [Optional Parameter]</em>= Configuration pairs to set data verification partners during workflow execution. To be Set up with backend team depending on your needs. Can help provide information at the Creation of your Scenario.</li>
+</ul>
+<p> <pre><code class=kotlin>tdiMobileSdk.newSession(tdiServerURL: String, scenarioName: String jwtToken: String, postScenarioInput: MutableMap&lt;String, String&gt;? = null)
+</code></pre></p>
+<blockquote>
+<p><strong>DEP Encryption:</strong>  </br>
+This Encryption is optional, if you want it, you will need to request it to our Backend team, they will setup your server to have this option available and you will have a new URL to provide for <strong>tdiServerURL</strong></br>
+What is DEP? - see <a href="security.html" target="_blank">SDK Security</a></p>
+</blockquote>
+<p></br></p>
+<h2 id="start">Start</h2>
+<hr />
+<p>Once everything is initialized you can Start the Session. This will return you MutableList of Task in the listener defined previously.</p>
+<p> <pre><code class=kotlin>session?.start()
+</code></pre></p>
+<blockquote>
+<p><strong>⚠ WARNING:</strong><br />
+Calling this API you might get a response in the Listener without any Task and a Pending status, you will after that get a second response with Tasks and status Action. </br>
+In any case when you receive a status Pending it mean the client need to wait.</p>
+<p></br></p>
+</blockquote>
+<h2 id="resume">Resume</h2>
+<hr />
+<p>Resume will trigger a specific Task that is already defined in the SDK, see the list of available Capture type. It will handle the Capture and the Sending of the data to the Server. You can also set your own way of Capture, see below Capture section. New Updated list of Tasks will be returned in the listener defined previously as MutableList of Task</p>
+<p> <pre><code class=kotlin>session?.resume(taskId: String)
+</code></pre></p>
+<h2 id="result">Result</h2>
+<hr />
+<p>Can be Automated with FCM listener - see <a href="fcm_integration.html" target="_blank">FCM integration page</a></p>
+<p>You should be notify by FCM push once the result are ready, about 15+ sec after last update or resume. If not you can use this call to pull manually the result from server using the following API. On both cases results will be returned in the listener defined previously as Result object</p>
+<p> <pre><code class=kotlin>session?.result()
+</code></pre></p>
+<p></br></p>
+<h2 id="update">Update</h2>
+<hr />
+<details>
+    <summary>Optional for advance implementation</summary>
+</br>
+<p>
+Update is similar of Result but can on specific case split the Capture Execution and the Data sending of a Task, Resume will wrap and execute both transparently.
+So you can do some check or add things in the data for server before sending.
+</p>
+
+
+
+ <pre><code class=kotlin>session?.update(taskId: String, input: Input)
+</code></pre>
+
+<p>
+Input is TDI interface format that you can extend like bellow. This one contain a HashMap<String, String>, that will contain the data to send to server from your Capture.
+See Capture section to understand how to fill it.
+</p>
+
+
+
+ <pre><code class=kotlin>data class InputImpl(override val pages: HashMap&lt;String, String&gt;) : Input
+</code></pre>
+
+</details>
+<p></br></p>
+<h2 id="stop">Stop</h2>
+<hr />
+<p>The session status should be Completed when you receive successful result, but if for any reason the session need to be stop before or can't get any good result, it's possible to call Stop, that will change the status to the current session to Completed so you can open a new one with Start API.</p>
+<p> <pre><code class=kotlin>session?.stop()
+</code></pre></p>
+<p></br></p>
+<h2 id="tdi-open-models">TDI Open Models</h2>
+<hr />
+<details>
+<summary>TdiProfileInfo</summary>
+
+
+
+ <pre><code class=kotlin>data class TdiProfileInfo(
+    val version: String,
+    val scenarios: MutableList&lt;Scenario&gt;,
+    val captors: MutableMap&lt;String,ProfileCaptor&gt;,
+    val configs: ProfileConfigs,
+    val theme: MutableMap&lt;String,JsonElement&gt;?,
+    val localization: MutableMap&lt;String,String?&gt;
+)
+</code></pre>
+
+    <p>For more details, see <a href="profile_api.html" target="_blank">Profile API page</a></p>
+</details>
+<details>
+<summary>Task</summary>
+
+
+
+ <pre><code class=kotlin>interface Task {
+    val id: String
+    val name: String?
+    val category: String?
+    val status: String? //Waiting = You need to Resume or Update - Running = Server is processing (nothing to do)
+}
+</code></pre>
+
+</details>
+<details>
+<summary>Input</summary>
+
+
+
+ <pre><code class=kotlin>interface Input: Serializable {
+    val pages: HashMap&lt;String,String&gt; //see Input Key convention example in Capture block
+}
+</code></pre>
+
+</details>
+<details>
+<summary>Result</summary>
+
+
+
+ <pre><code class=kotlin>interface Result {
+    val code: String
+    val message: String?
+    val description: HashMap&lt;String, String&gt;? //User details and document verification result
+}
+</code></pre>
+
+</details>
+
+<p></br></p>
+<h2 id="captorprovider">CaptorProvider</h2>
+<hr />
+<p> <pre><code class=kotlin>val tdiMobileSdk = TdiMobileSdk.getInstance()
+tdiMobileSdk.captorProvider[&quot;Passport&quot;]             // Passport Capture (1 page)
+tdiMobileSdk.captorProvider[&quot;ID Card&quot;]              // ID Document Capture (2 pages)
+tdiMobileSdk.captorProvider[&quot;ICAO&quot;]                 // ICAO Document Capture (2 pages)
+tdiMobileSdk.captorProvider[&quot;AutoDetectDocIDV&quot;]     // Auto document type detection on all ICAO documents like Passport/ID Card/Driving license
+tdiMobileSdk.captorProvider[&quot;Native-Passport&quot;]      // Passport native camera Capture (1 page)
+tdiMobileSdk.captorProvider[&quot;Native-ID Card&quot;]       // ID Document native camera Capture (2 pages)
+tdiMobileSdk.captorProvider[&quot;Native-ICAO&quot;]          // ICAO Document native camera Capture (2 pages)
+tdiMobileSdk.captorProvider[&quot;AutoDetectDocNative&quot;]  // Auto document type detection on all ICAO documents like Passport/ID Card/Driving license
+tdiMobileSdk.captorProvider[&quot;Selfie&quot;]               // Selfie Capture
+tdiMobileSdk.captorProvider[&quot;Non-ID&quot;]               // Capture and Crop any type of document (1 page)
+tdiMobileSdk.captorProvider[&quot;MrzDocument&quot;]          // Capture MRZ lines
+tdiMobileSdk.captorProvider[&quot;NfcDocument&quot;]          // Read electronic chip
+tdiMobileSdk.captorProvider[&quot;MrzNfcDocument&quot;]       // Capture MRZ and Read electronic chip
+tdiMobileSdk.captorProvider[&quot;Signature&quot;]            // Display Contract and capture signature(s)
+tdiMobileSdk.captorProvider[&quot;Voice&quot;]                // Voice enrollment captor
+tdiMobileSdk.captorProvider[&quot;SyncWebSignature&quot;]     // Display Contract and eSignature using a WebView
+tdiMobileSdk.captorProvider[&quot;AsyncWebSignature&quot;]    // Display Contract and eSignature using an external browser
+tdiMobileSdk.captorProvider[&quot;VeridiumFingerprint&quot;]  // Fingerprint Capture
+</code></pre></p>
+<h2 id="scenario-flows">Scenario flows</h2>
+<hr />
+<p><img alt="" src="img/tdi_flows.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

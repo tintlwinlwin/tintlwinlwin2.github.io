@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Native ID Document Capture - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item active">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="capture_tools_face_liveness_capture.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="capture_tools_contract_signature_capture.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#id-document-native-camera-capture" class="nav-link">ID Document Native camera Capture</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#a-thales-tool-call-native-camera-api" class="nav-link">A Thales tool call native camera API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#captors" class="nav-link">Captors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#customization" class="nav-link">Customization</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#middle-cropping-points" class="nav-link">Middle cropping points</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#guideline" class="nav-link">Guideline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#capture-camera-orientation" class="nav-link">Capture camera orientation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#document-sides-count" class="nav-link">Document sides count</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#time-out" class="nav-link">Time out</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#skippable" class="nav-link">Skippable</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#resolution" class="nav-link">Resolution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#jpeg-quality" class="nav-link">JPEG quality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#captor-callback" class="nav-link">Captor Callback</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="id-document-native-camera-capture">ID Document Native camera Capture</h1>
+<p></br></p>
+<h2 id="a-thales-tool-call-native-camera-api">A Thales tool call native camera API</h2>
+<hr />
+<p>Current version: 1.0.0</p>
+<p>No license required.
+No AAR package needed on repository</p>
+<p>The Seventh Edition of Doc 9303 represents a restructuring of the ICAO specifications for Machine Readable Travel Documents. Without incorporating substantial modifications to the specifications, in this new edition Doc 9303 has been reformatted into a set of specifications for Size 1 Machine Readable Official Travel Documents (TD1), Size 2 Machine Readable Official Travel Documents (TD2), and Size 3 Machine Readable Travel Documents (TD3), as well as visas.</p>
+<p>This set of specifications consists of various separate documents in which general (applicable to all MRTDs) as well asMRTD form factor specific specifications are grouped.</p>
+<ul>
+<li>TD1: 53.98 mm x 85.6 mm (2.13 in x 3.37 in).</li>
+<li>TD2: 74.0 mm x 105.0 mm (2.91 in x 4.13 in).</li>
+<li>TD3: 88.0 mm x 125.0 mm (3.46 in x 4.92 in).</li>
+</ul>
+<p>This tool will help you to Capture official Document: Passport, ID card (Front and Back) or all ICAO documents like Driving license.
+This captor uses the Google CameraX API to:</p>
+<ul>
+<li>capture the document in manual using a shutter button</li>
+<li>capture on landscape or portrait mode</li>
+<li>auto-focus with manual focus area (tap to focus)</li>
+<li>auto WhiteBalance and auto Exposure</li>
+<li>automatic edge detection</li>
+<li>Manual cropping and rotation at validation step</li>
+</ul>
+<p><img alt="" src="img/native_captor_landscape.jpg" /> <img alt="" src="img/native_captor_landscape_validation.jpg" /> 
+<img alt="" src="img/native_captor_portrait.jpg" /> <img alt="" src="img/native_captor_portrait_validation.jpg" /></p>
+<p>The SDK is having for that 4 Captors that will be used automatically when your are using the API <em>session.resume(taskID)</em> and we offer some customization.</p>
+<p></br></p>
+<h2 id="captors">Captors</h2>
+<hr />
+<p> <pre><code class=kotlin>val tdiMobileSdk = TdiMobileSdk.getInstance()
+tdiMobileSdk.captorProvider[&quot;Native-Passport&quot;]       //Passport Capture (1 page) - TD3
+tdiMobileSdk.captorProvider[&quot;Native-ID Card&quot;]        //ID Document Capture (2 pages) - TD1-TD2
+tdiMobileSdk.captorProvider[&quot;Native-ICAO&quot;]           //ICAO like Driving license (1 or 2 pages) - TD1-TD2-TD3
+tdiMobileSdk.captorProvider[&quot;AutoDetectDocNative&quot;]   //Auto document type detection on all ICAO documents like Passport/ID Card/Driving license (1 or 2 pages) - TD1-TD2-TD3
+</code></pre></p>
+<p></br></p>
+<h2 id="customization">Customization</h2>
+<hr />
+<p>​   <strong>Android Icons:</strong> idv_doc_ic_check_circle_ko.xml, idv_doc_ic_check_circle_ok.xml, idv_doc_ic_crop.xml, idv_doc_swap_doc_side_ico.png</p>
+<p>​   <strong>Captors configuration:</strong></p>
+<p>​           Captors can get a config Map<key,value> to set different capture parameters.</p>
+<p> <pre><code class=kotlin>TdiMobileSdk.getInstance().tdiMobileSdk.captorProvider[&quot;Native-Passport&quot;]?.config = mutableMapOf()
+TdiMobileSdk.getInstance().tdiMobileSdk.captorProvider[&quot;Native-ID Card&quot;]?.config = mutableMapOf()
+TdiMobileSdk.getInstance().tdiMobileSdk.captorProvider[&quot;Native-ICAO&quot;]?.config = mutableMapOf()
+
+&quot;EXTRA_CAPTURE_CROP_MIDDLE_POINTS&quot; to true, // Middle points are displayed to allow to move the cropping horizontaly &amp; verticaly
+&quot;EXTRA_CAPTURE_CROP_GUIDELINES&quot; to true, // Display guideline lines during the cropping
+&quot;EXTRA_CAPTURE_ORIENTATION&quot; to 10,  capture orientation: portrait or landscape or automatic
+&quot;EXTRA_CAPTURE_NB_SIDES&quot; to 2, 
+&quot;EXTRA_CAPTURE_TIMEOUT&quot; to 120000, // Time out in milli-seconds
+&quot;EXTRA_CAPTOR_SKIPPABLE&quot; to true, // Display a SKIP buttton allowing user to skip the capture. false by default
+&quot;EXTRA_CAPTURE_RESOLUTION&quot; to 3, // Image resolution in mega pixels, default= 3MP (about 2000 x 1500 pixels)
+&quot;EXTRA_CAPTURE_QUALITY&quot; to 90, // JPEG compression quality, default= 90
+&quot;EXTRA_CAPTOR_CALLBACK&quot; to captorCallback // see below Captor.Callback object
+&quot;EXTRA_CAPTURE_DOC_TITLE&quot; to &quot;My document title&quot; // document title name displayed on top of the captor, can be overwritten by the Profile API
+</code></pre></p>
+<p></br></p>
+<h3 id="middle-cropping-points"><strong>Middle cropping points</strong></h3>
+<p><img alt="" src="img/native_guideline_4_points.jpg" /> <strong> false </strong> this 4 points allows to move each point to correct perspective</p>
+<p><img alt="" src="img/native_guideline_8_points.jpg" /> <strong> true </strong> this 4 additional middle points allows to move points horizontaly or verticaly</p>
+<p>Perpective correction: 
+<img alt="" src="img/native_crop_perpective.jpg" /></p>
+<p>Vertical correction  : 
+<img alt="" src="img/native_crop_ver.jpg" /> </p>
+<p>Horizontal correction: 
+<img alt="" src="img/native_crop_hor.jpg" /></p>
+<h3 id="guideline"><strong>Guideline</strong></h3>
+<ul>
+<li><strong> false </strong>
+ <img alt="" src="img/native_no_guideline_4_points.jpg" /></li>
+<li><strong> true </strong>
+ <img alt="" src="img/native_guideline_4_points.jpg" /></li>
+</ul>
+<h3 id="capture-camera-orientation"><strong>Capture camera orientation</strong></h3>
+<ul>
+<li>
+<p><strong>0</strong> Landscape, the capture is done in landscape mode</p>
+</li>
+<li>
+<p><strong>1</strong> Portrait, the capture is done in portrait mode</p>
+</li>
+<li>
+<p><strong>10</strong> default value, automatic, the capture follow the device rotation (if enabled by user on device settings)</p>
+</li>
+</ul>
+<h3 id="document-sides-count"><strong>Document sides count</strong></h3>
+<p>This value set the number of document side(s) to capture, e.g. 1 for a passport, 2 for an Identity card</p>
+<h3 id="time-out"><strong>Time out</strong></h3>
+<p>By default set at <strong>0</strong> meaning no Time out. 
+This timer value in seconds can be a security feature.</p>
+<p>By setting a time frame to execute the document capture before aborting to limit people trying fake capture.</p>
+<h3 id="skippable"><strong>Skippable</strong></h3>
+<ul>
+<li>
+<p><strong>true</strong> to display the SKIP button to allow user to skip the capture</p>
+</li>
+<li>
+<p><strong>false</strong> default value, to hide the SKIP button, user must process the capture</p>
+</li>
+</ul>
+<p>This setting is overrided by the Profile API</p>
+<h3 id="resolution"><strong>Resolution</strong></h3>
+<p>Value from 1 to 'n', is the resolution of the capture in mega pixels (horizontal size x vertical size in pixels) by default set at <strong>3</strong> (MP) (about 2400 x 1200 pixels)</p>
+<h3 id="jpeg-quality"><strong>JPEG quality</strong></h3>
+<p>EXTRA_CAPTURE_QUALITY: Value from 1 to 100, by default set at <strong>90</strong></p>
+<h3 id="captor-callback"><strong>Captor Callback</strong></h3>
+<p> <pre><code class=kotlin>val captorCallback = object : Captor.Callback{
+    override fun onDataCaptured(input: Input) {
+        input.pages[&quot;page1&quot;] // Front Document
+        input.pages[&quot;page2&quot;] // Back Document (if any)
+    }
+
+    override fun onFailure(failure: Failure) {
+        // Capture failed, see Error guide chapter to identify what's the reason.
+    }
+}
+</code></pre></p>
+<p>Captor.Callback is an optional config to help you to:</p>
+<ol>
+<li>
+<p>Collect the data captured during a call of resume() API. Those data are automatically sent to server by TDI sdk after Capture, what you get here, is only for you if you need. Please be sure to keep it safe.</p>
+</li>
+<li>
+<p>Listening what's happening on Failure scenario, see Error guide Chapter for reference. It could be a simple Cancel by pressing Back button or tool issue.</p>
+</li>
+</ol>
+<p></br></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

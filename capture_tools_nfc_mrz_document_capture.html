@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>NFC / MRZ Document Capture - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item active">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="capture_tools_non_id_document_capture.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="capture_tools_voice_capture.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#nfc-mrz-capture" class="nav-link">NFC / MRZ Capture</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#a-thales-tool-call-idv" class="nav-link">A Thales tool call IDV</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#captors" class="nav-link">Captors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#customization" class="nav-link">Customization</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#mrz-captor-callback" class="nav-link">MRZ Captor Callback</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#nfc-captor-callback-and-mrznfc-combined-mode" class="nav-link">NFC Captor Callback and MRZ/NFC combined mode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#nfc-data-group-content" class="nav-link">NFC Data Group content</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#captorcallback" class="nav-link">Captor.Callback</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#the-api-of-idv-is-accessible" class="nav-link">The API of IDV is accessible</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#help-for-integration" class="nav-link">Help for integration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="nfc-mrz-capture">NFC / MRZ Capture</h1>
+<p></br></p>
+<h2 id="a-thales-tool-call-idv">A Thales tool call IDV</h2>
+<hr />
+<p>Current version: 4.2.1</p>
+<p>License required, to be provided at SDK initialization.</p>
+<p>This tool will help you to Capture official electronic ICAO documents like e-Passport using BAC protocol (&gt; 130 countries).</p>
+<p>These documents embed an NFC chip storing public and private data.</p>
+<p></br>
+The SDK is having for that 2 Captors that will be used automatically when your are using the API <em>session.resume(taskID)</em> and we offer some customization.</p>
+<ul>
+<li>
+<p><strong>MRZ captor</strong> to capture the MRZ lines using handset camera</p>
+</li>
+<li>
+<p><strong>NFC captor</strong> to read NFC chip.</p>
+</li>
+</ul>
+<p>A combinaison of 2 captors:
+- <strong>NFC/MRZ captor</strong> a combined mode allow to start both captors during a single task</p>
+<p><img alt="" src="img/mrz_captor_new.png" /> <img alt="" src="img/nfc_captor_new.png" /></p>
+<p></br></p>
+<h2 id="captors">Captors</h2>
+<hr />
+<p> <pre><code class=kotlin>val tdiMobileSdk = TdiMobileSdk.getInstance()
+tdiMobileSdk.captorProvider[&quot;MrzDocument&quot;]       // Capture the MRZ lines using handset camera
+tdiMobileSdk.captorProvider[&quot;NfcDocument&quot;]       // Read NFC document chip using handset NFC reader
+tdiMobileSdk.captorProvider[&quot;MrzNfcDocument&quot;]    // Capture the MRZ lines using handset camera &amp; Read NFC document chip using handset NFC reader
+</code></pre></p>
+<p>The MrzNfcDocument captor is a combined mode allowing the SDK to start the MRZ captor and automatically to start the NFC reading with one task
+Data read by MRZ captor is provided to NFC captor allowing access to the e-document NFC chip.</p>
+<p></br></p>
+<h2 id="permissions">Permissions</h2>
+<p> <pre><code class>&lt;uses-permission android:name=&quot;android.permission.NFC&quot; /&gt;
+</code></pre></p>
+<p>This permission is requested by TDI SDK without user validation.</p>
+<p>Until TDI 1.5, by default the SDK requests this feature during Google Play installation.
+The application can override this behavior to allow the installation without NFC feature.
+Add on Manifest.xml the line:</p>
+<p> <pre><code class>&lt;uses-feature android:name=&quot;android.hardware.nfc&quot; android:required=&quot;false&quot;  tools:replace=&quot;required&quot;/&gt;
+</code></pre></p>
+<p>With TDI 1.5 and above, the NFC feature is not mandatory and this override is not necessary. </p>
+<p></br></p>
+<h2 id="customization">Customization</h2>
+<hr />
+<p><strong>See <a href="ressources\capture_tools\mrz_nfc\mrz_nfc_document_capture_library.pdf" target="_blank">MRZ / NFC document captor presentation</a> for more information about customization</strong> </p>
+<p><strong>Captors configuration:</strong></p>
+<p>​           Captors can get a config Map<key,value> to set different capture parameters.</p>
+<p> <pre><code class=kotlin>TdiMobileSdk.getInstance().tdiMobileSdk.captorProvider[&quot;MrzDocument&quot;]?.config = mutableMapOf(
+    &quot;EXTRA_IDV_LICENSE&quot; to xxxx, // set the IDV SDK license, deprecated: prefer to use the setLicenses() TDI SDK method
+    &quot;EXTRA_MRZ_DISPLAY_HELP&quot; to true, // Display or not help
+    &quot;EXTRA_MRZ_CAPTURE_TIMEOUT&quot; to 60, // Timeout, default 20s
+    &quot;EXTRA_MRZ_INPUT_STORED&quot; to true, // MRZ data are securely stored to be used by NFC captor (no need to 
+    &quot;EXTRA_CAPTOR_SKIPPABLE&quot; to true, // Display a SKIP buttton allowing user to skip the capture. false by default
+    &quot;EXTRA_CAPTOR_CALLBACK&quot; to captorCallback // see below Captor.Callback object
+)
+
+TdiMobileSdk.getInstance().tdiMobileSdk.captorProvider[&quot;NfcDocument&quot;]?.config = mutableMapOf(
+    &quot;EXTRA_IDV_LICENSE&quot; to xxxx, // set the IDV SDK license, deprecated: prefer to use the setLicenses() TDI SDK method
+    &quot;EXTRA_NFC_DISPLAY_WAIT_TAP_ANIMATION&quot; to true, // Display or not an animation during waiting NFC tap
+    &quot;EXTRA_NFC_DISPLAY_MOVE_DETECTION&quot; to true, // Display help in case of handset movement
+    &quot;EXTRA_MRZ_INPUT_DOC_NUMBER&quot; to &quot;xxxxxxxxxx&quot;, // provided data read by the MRZ captor before NFC reading (not needed if MRZ parameter EXTRA_MRZ_INPUT_STORED is set to true)
+    &quot;EXTRA_MRZ_INPUT_DATE_OF_BIRTHDAY&quot; to &quot;YYMMDD&quot;, // provided data read by the MRZ captor before NFC reading (not needed if MRZ parameter EXTRA_MRZ_INPUT_STORED is set to true)
+    &quot;EXTRA_MRZ_INPUT_DATE_OF_EXPIRATION&quot; to &quot;YYMMDD&quot;, // provided data read by the MRZ captor before NFC reading (not needed if MRZ parameter EXTRA_MRZ_INPUT_STORED is set to true)
+    &quot;EXTRA_CAPTOR_SKIPPABLE&quot; to true, // Display a SKIP buttton allowing user to skip the capture. false by default
+    &quot;EXTRA_NFC_READING_TIMEOUT&quot; to 120, // Timeout, default 20s, 
+    &quot;EXTRA_CAPTOR_CALLBACK&quot; to captorCallback // see below Captor.Callback object
+)
+
+// Combined mode:
+TdiMobileSdk.getInstance().tdiMobileSdk.captorProvider[&quot;MrzNfcDocument&quot;]?.config = mutableMapOf(
+    &quot;EXTRA_IDV_LICENSE&quot; to xxxx, // set the IDV SDK license, deprecated: prefer to use the setLicenses() TDI SDK method
+    &quot;EXTRA_MRZ_DISPLAY_HELP&quot; to true, // Display or not help
+    &quot;EXTRA_NFC_DISPLAY_WAIT_TAP_ANIMATION&quot; to true, // Display or not an animation during waiting NFC tap
+    &quot;EXTRA_NFC_DISPLAY_MOVE_DETECTION&quot; to true, // Display help in case of handset movement
+    &quot;EXTRA_NFC_READING_TIMEOUT&quot; to 120, // Timeout, default 20s
+    &quot;EXTRA_MRZ_NFC_COMBINED&quot; to true, // activate the combined mode
+    &quot;EXTRA_CAPTOR_SKIPPABLE&quot; to true, // Display a SKIP buttton allowing user to skip the capture. false by default
+    &quot;EXTRA_CAPTOR_CALLBACK&quot; to captorCallback // see below Captor.Callback object
+)
+</code></pre></p>
+<h3 id="mrz-captor-callback"><strong>MRZ Captor Callback</strong></h3>
+<p> <pre><code class=kotlin>val captorCallback = object : Captor.Callback{
+    override fun onDataCaptured(input: Input) {
+        input.pages[&quot;metadata_docNumber&quot;] // Document number e.g. 00000000
+        input.pages[&quot;metadata_birthDate&quot;] // User date of birth e.g. 230322 (YYMMDD) 
+        input.pages[&quot;metadata_docValidityDate&quot;] // Document expiration date e.g. 780421 (YYMMDD)
+        input.pages[&quot;metadata_version_sdk_library_nfc_version&quot;] // NFC library version e.g. 4.2.1-01
+        input.pages[&quot;metadata_version_sdk_version&quot;] // // NFC SDK version e.g. 4.2.1
+        input.pages[&quot;metadata_version_sdk_name&quot;] // // SDK name e.g. IDV
+    }
+
+    override fun onFailure(failure: Failure) {
+        // Capture failed, see Error guide chapter to identify what's the reason.
+    }
+}
+</code></pre></p>
+<h3 id="nfc-captor-callback-and-mrznfc-combined-mode"><strong>NFC Captor Callback and MRZ/NFC combined mode</strong></h3>
+<p> <pre><code class=kotlin>val captorCallback = object : Captor.Callback{
+    override fun onDataCaptured(input: Input) {
+        input.pages[&quot;metadata_version_sdk_version&quot;] // // NFC SDK version e.g. 4.2.1
+        input.pages[&quot;metadata_version_sdk_name&quot;] // // SDK name e.g. IDV
+        input.pages[&quot;page1&quot;] // MRZ content from DG1 file: JSON coded on base64 (REQUIRED)
+        input.pages[&quot;page2&quot;] // user portraits from DG2 file: bytes array coded on base64 (REQUIRED)
+        input.pages[&quot;page3&quot;] // user Fingers from DG3 file: bytes array coded on base64(optional)
+        input.pages[&quot;page4&quot;] // user iris from DG4 file: bytes array coded on base64 (optional)
+        input.pages[&quot;page5&quot;] // user displayed pictures (Biometric Faces) from DG5 file: bytes array coded on base64 (optional)
+        input.pages[&quot;page6&quot;] // RFU from DG6 file: bytes array coded on base64(optional)
+        input.pages[&quot;page7&quot;] // user signature from DG7 file: bytes array coded on base64 (optional)
+        input.pages[&quot;page8&quot;] // Data Feature(s) from DG8 file: bytes array coded on base64 (optional)
+        input.pages[&quot;page9&quot;] // Structure Feature(s), not yet defined from DG9 file: bytes array coded on base64 (optional)
+        input.pages[&quot;page10&quot;] // Substance Feature(s), not yet defined from DG10 file: bytes array coded on base64 (optional)
+        input.pages[&quot;page11&quot;] // user personal details from DG11 file: JSON coded on base64  (optional but usual)
+        input.pages[&quot;page12&quot;] // user document details from DG12 file: JSON coded on base64  (optional but usual)
+        input.pages[&quot;page13&quot;] // Details(s), at the discretion of the issuer from DG13 file: bytes array coded on base64 (optional)
+        input.pages[&quot;page14&quot;] // Security Options from DG14 file: bytes array coded on base64 (CONDITIONAL)
+        input.pages[&quot;page15&quot;] // Active Authentication Public Key from DG15 file: bytes array coded on base64 (CONDITIONAL)
+        input.pages[&quot;page16&quot;] // Person(s) to Notify from DG16 file: bytes array coded on base64(REQUIRED)
+        input.pages[&quot;page17&quot;] // Passive authentication DG hash list from SOD file: bytes array coded on base64(REQUIRED)
+        input.pages[&quot;page18&quot;] // Common data from COM file: bytes array coded on base64(REQUIRED)
+    }
+
+    override fun onFailure(failure: Failure) {
+        // Capture failed, see Error guide chapter to identify what's the reason.
+    }
+}
+</code></pre></p>
+<p></br></p>
+<h3 id="nfc-data-group-content"><strong>NFC Data Group content</strong></h3>
+<p>Content is described on <a href="https://www.icao.int/publications/documents/9303_p10_cons_en.pdf" target="_blank">ICAO  Doc 9303, Machine Readable Travel Documents Part 10</a>  <img alt="" src="img/icao.png" /></p>
+<h3 id="captorcallback"><strong>Captor.Callback</strong></h3>
+<p>Captor.Callback is an optional config to help you to:</p>
+<ol>
+<li>
+<p>Collect the data captured during a call of resume() API. Those data are automatically sent to server by TDI sdk after Capture, what you get here, is only for you if you need. Please be sure to keep it safe.</p>
+</li>
+<li>
+<p>Listening what's happening on Failure scenario, see Error guide Chapter for reference. It could be a simple Cancel by pressing Back button or tool issue.</p>
+</li>
+</ol>
+<p></br></p>
+<h2 id="the-api-of-idv-is-accessible">The API of IDV is accessible</h2>
+<hr />
+<p>For more customization, if you don't want to use the Captors we already develop, you can develop your own using the IDV tools.</p>
+<p>You can like this develop your own Capture and add it to the <em>TDI: Captor Provider list</em> for more automation.</p>
+<h3 id="help-for-integration">Help for integration</h3>
+<div class="admonition note">
+<p>See IDV MRZ Documentation: <a href="ressources\idv\IDV_MRZ-4.2.1.zip">IDV_MRZ-4.2.1.zip</a> </br>
+See IDV NFC Documentation: <a href="ressources\idv\IDV_NFC-4.2.1.zip">IDV_NFC-4.2.1.zip</a> </p>
+</div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

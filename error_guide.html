@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Error Guide - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="profile_api.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="security.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#error-guide" class="nav-link">Error Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#tdi-listener-result-error" class="nav-link">TDI Listener Result Error</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#exceptions" class="nav-link">Exceptions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#capture-callback-onfailure" class="nav-link">Capture Callback onFailure()</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#id-non-id-document-native-id-captors-errors" class="nav-link">ID / Non ID Document / Native ID Captors errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#selfie-face-captor-errors" class="nav-link">Selfie / Face Captor errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#nfc-mrz-captor-errors" class="nav-link">NFC / MRZ Captor errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#contract-signature-captor-errors" class="nav-link">Contract / Signature Captor errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#voice-captor-errors" class="nav-link">Voice Captor errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#fingerprint-captor-errors" class="nav-link">FingerPrint Captor errors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="error-guide">Error Guide</h1>
+<p></br></p>
+<h2 id="tdi-listener-result-error">TDI Listener Result Error</h2>
+<hr />
+<p>Result from listener is composed of 3 values, Code, Message and Description. Here we will focus on Code and Message.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Code</th>
+<th>Message</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>0</td>
+<td>-</td>
+<td>Everything working fine, you can see in description a Map<String, String> to interpret your results after Capturing.</td>
+</tr>
+<tr>
+<td>DEP</td>
+<td>12</td>
+<td>INVALID_PUBLIC_KEY</td>
+<td>Be sure you called once getProfile API, to get the latest public key. <br /> If still not working, contact us to verify the validity of the public key.</td>
+</tr>
+<tr>
+<td>DEP</td>
+<td>14</td>
+<td>INVALID_TIMESTAMP</td>
+<td>Check the Date &amp; Time of your phone to be correct. <br />Preferably use the option Date &amp; Time -&gt; "Use network-provided time"</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>401</td>
+<td>Access denied</td>
+<td>JWT is invalid or expired</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>403</td>
+<td>Forbidden</td>
+<td>Access forbidden</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>404</td>
+<td>HTTP not found</td>
+<td>Scenario name is wrong</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>500</td>
+<td>Server not found</td>
+<td>URL is wrong</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>501</td>
+<td>Not Implemented</td>
+<td>API method not implemented by the server.</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>502</td>
+<td>Bad gateway</td>
+<td>Proxy failed to complete the request. Could be issue on the proxy or in the server</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>503</td>
+<td>Service unavailable</td>
+<td>The service is unavailable</td>
+</tr>
+<tr>
+<td>Parsing</td>
+<td>1000</td>
+<td>Invalid JSON: parsing error</td>
+<td>Received a non-valid Json</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>2001</td>
+<td>Business critical:  [message]</td>
+<td>Some Check failed eg. Expired Doc, Face, Voice, Specimen...</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>3000</td>
+<td>Internal service error</td>
+<td>Unexpected error with the platform that needs to be investigated by Thales.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>4000</td>
+<td>Missing input[: description]</td>
+<td>Generic problem with scenario due to missing input.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>4001</td>
+<td>Missing input[: description]</td>
+<td>Missing input reported by connector.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>4300</td>
+<td>Invalid input[: description]</td>
+<td>Generic problem with scenario due to invalid input.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>4301</td>
+<td>Invalid input[: description]</td>
+<td>Invalid input reported by connector.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>4302</td>
+<td>Invalid Input: Document is unreadable</td>
+<td>Invalid input, document is unreadable</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>4500</td>
+<td>Invalid state[: description]</td>
+<td>Generic problem with scenario due to invalid state</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>4501</td>
+<td>Invalid state[: description]</td>
+<td>Invalid state reported by connector</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>5000</td>
+<td>Internal service error</td>
+<td>Missing or wrong configuration at connector.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>5501</td>
+<td>External service error</td>
+<td>Invalid external connectivity, reported by connector.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>5502</td>
+<td>External service error</td>
+<td>Invalid external response, reported by connector.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>5503</td>
+<td>External service error</td>
+<td>Unauthorized response from external party</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h2 id="exceptions">Exceptions</h2>
+<hr />
+<p>Add a <em>try{...}catch(e: TdiThrowableFailure){...}</em> around TDI api - initialize()</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8000</td>
+<td>device is rooted</td>
+<td></td>
+</tr>
+<tr>
+<td>8001</td>
+<td>one or more functions are hooked</td>
+<td></td>
+</tr>
+<tr>
+<td>8002</td>
+<td>device is suspicious</td>
+<td></td>
+</tr>
+<tr>
+<td>8003</td>
+<td>Treat environment has been tampered</td>
+<td></td>
+</tr>
+<tr>
+<td>10000</td>
+<td>JSON Exception: [message]</td>
+<td>Invalid Profile API format</td>
+</tr>
+<tr>
+<td>20000</td>
+<td>DEP encodeRequest Exception: [message]</td>
+<td>E2E Encryption error, please contact us providing the [message]</td>
+</tr>
+<tr>
+<td>20001</td>
+<td>DEP decodeRequest Exception: [message]</td>
+<td>E2E Decrypt error, please contact us providing the [message] </br> - Illegal HMAC! =&gt; Multiple request sent in parallel.</td>
+</tr>
+<tr>
+<td>20002</td>
+<td>X-Http-Response-Status-Code is missing</td>
+<td>Issue on DEP response which isn't encrypted. </br> Check the logs for "DEP Status Code: xxx" and see with Server team why X-Http-Response-Status-Code value is missing, provide "Session ID" </br> Potential reasons:</br>- Device date/time not synchronised. </br> - Patch Request too long to be sent. (Max 60sec)</td>
+</tr>
+<tr>
+<td>20003</td>
+<td>DEP decode response failed. Empty response body.</td>
+<td></td>
+</tr>
+<tr>
+<td>30000</td>
+<td>HTTP exception</td>
+<td>O.S. can raise an exception in some cases like and the host is not reacheable (the server url is not right set)</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<p>Add a <em>try{...}catch(e: Exception){...}</em> around TDI api's - newSession(...), start(...), resume(...), update(...), result(...)</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Message</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IllegalStateException</td>
+<td>Multiple session creation not allowed. Either stop previous session or continue using previous session</td>
+<td>Session will be closed only if it status goes to COMPLETED, use TDI stop() call if need to force close the session</td>
+</tr>
+<tr>
+<td>IllegalStateException</td>
+<td>TdiMobileSdk not initialized.</td>
+<td>Trying to use SDK without initialize it</td>
+</tr>
+<tr>
+<td>IllegalStateException</td>
+<td>TdiMobileSdk session isn't created.</td>
+<td>SDK is receiving responses from Server or FCM without any Session created. Can happen if force close a Session.</td>
+</tr>
+<tr>
+<td>IllegalStateException</td>
+<td>Task not found. Either session is in completed/pending state or session has not been initialized</td>
+<td>Trying to Resume non existing task, might have been already executed</td>
+</tr>
+<tr>
+<td>IllegalStateException</td>
+<td>Session cannot be started twice</td>
+<td>Trying to call start() multiple time</td>
+</tr>
+<tr>
+<td>IllegalStateException</td>
+<td>Cannot invoke action on completed state</td>
+<td>Trying to execute start(), resume() or update() on a Completed state Session</td>
+</tr>
+<tr>
+<td>IllegalStateException</td>
+<td>Cannot invoke action on pending state</td>
+<td>Trying to execute start(), resume() or update() on a Pending state Session. Pending state, mean the SDK is waiting for server update before continuing</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h2 id="capture-callback-onfailure">Capture Callback onFailure()</h2>
+<hr />
+<p> <pre><code class=kotlin>override fun onFailure(failure: Failure) {
+        Log.d(TAG, &quot;Code: ${failure.errorCode}, Message: ${failure.errorMessage}&quot;
+}
+</code></pre></p>
+<p>see errors tables below</p>
+<p></br></p>
+<h3 id="id-non-id-document-native-id-captors-errors">ID / Non ID Document / Native ID Captors errors</h3>
+<table>
+<thead>
+<tr>
+<th>errorCode</th>
+<th>errorMessage</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7001</td>
+<td>ID: IDV_code : IDV_message<br />OR<br />Non-ID: Non-ID_code : Non-ID_message</td>
+<td>IDV errors (see IDV table below)<br />OR<br />Non-ID errors (see Non-ID table below)</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>User cancellation!</td>
+<td>onBackPressed() during capture or time out expiration</td>
+</tr>
+<tr>
+<td>9100</td>
+<td>Exception: JNA/JNI issue</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h3 id="selfie-face-captor-errors">Selfie / Face Captor errors</h3>
+<table>
+<thead>
+<tr>
+<th>errorCode</th>
+<th>errorMessage</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7003</td>
+<td>message</td>
+<td>Initialization or JNA errors</td>
+</tr>
+<tr>
+<td>7004</td>
+<td>User cancellation!</td>
+<td>onBackPressed() during capture</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h3 id="nfc-mrz-captor-errors">NFC / MRZ Captor errors</h3>
+<table>
+<thead>
+<tr>
+<th>errorCode</th>
+<th>errorMessage</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7101</td>
+<td>IDV_code : IDV_message <br />OR<br />NFC_MRZ_code : NFC_MRZ_message</td>
+<td>IDV errors (see IDV table below)<br />OR<br />NFC / MRZ errors (see table below)</td>
+</tr>
+<tr>
+<td>7102</td>
+<td>User cancellation!</td>
+<td>onBackPressed() during capture</td>
+</tr>
+<tr>
+<td>9100</td>
+<td>Exception: JNA/JNI issue</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h3 id="contract-signature-captor-errors">Contract / Signature Captor errors</h3>
+<table>
+<thead>
+<tr>
+<th>errorCode</th>
+<th>errorMessage</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7201</td>
+<td>contract_code : contract_message</td>
+<td>Contract / Signature errors (see Contract / Signature table below)</td>
+</tr>
+<tr>
+<td>7202</td>
+<td>User cancellation!</td>
+<td>onBackPressed() during capture</td>
+</tr>
+<tr>
+<td>7203</td>
+<td>WebView error</td>
+<td>Error during sync. contract</td>
+</tr>
+<tr>
+<td>7204</td>
+<td>WebView http error</td>
+<td>Error during sync. contract</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h3 id="voice-captor-errors">Voice Captor errors</h3>
+<table>
+<thead>
+<tr>
+<th>errorCode</th>
+<th>errorMessage</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7301</td>
+<td>voice_code : voice_message</td>
+<td>Voice enrollment errors</td>
+</tr>
+<tr>
+<td>7302</td>
+<td>User cancellation!</td>
+<td>onBackPressed() during voice capture</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h3 id="fingerprint-captor-errors">FingerPrint Captor errors</h3>
+<table>
+<thead>
+<tr>
+<th>errorCode</th>
+<th>errorMessage</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7401</td>
+<td>contract_code : contract_message</td>
+<td>Captor failure (licence, initialization ...)</td>
+</tr>
+<tr>
+<td>7402</td>
+<td>User cancellation</td>
+<td>onBackPressed() during voice capture</td>
+</tr>
+<tr>
+<td>7403</td>
+<td>capture aborted</td>
+<td>the captor is put to background</td>
+</tr>
+<tr>
+<td>7404</td>
+<td>Time out</td>
+<td>the time out is reached</td>
+</tr>
+<tr>
+<td>7405</td>
+<td>Operation failed</td>
+<td>an operation failed like authentication failed</td>
+</tr>
+<tr>
+<td>7406</td>
+<td>Liveness failed</td>
+<td>Liveness detection failed</td>
+</tr>
+<tr>
+<td>7407</td>
+<td>Fingerprint licence invalid</td>
+<td>Licence activation failed</td>
+</tr>
+<tr>
+<td>7410</td>
+<td>Camera feature issue description</td>
+<td>Camera capabilities issue (no torch or definition &lt; 5MP)</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h4 id="idv-sdk-errors-list">IDV sdk errors list</h4>
+<p>These errors are returned by IDV DOC/Face/MRZ/NFC SDK</p>
+<table>
+<thead>
+<tr>
+<th>IDV_code</th>
+<th>IDV_message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0100 OR 0x0200</td>
+<td>No error found</td>
+</tr>
+<tr>
+<td>0x0002</td>
+<td>Library not initialized</td>
+</tr>
+<tr>
+<td>0x0003</td>
+<td>Library is already initialized</td>
+</tr>
+<tr>
+<td>0x0004</td>
+<td>Library init is in progress</td>
+</tr>
+<tr>
+<td>0x0005</td>
+<td>Library stop is in progress</td>
+</tr>
+<tr>
+<td>0x0006</td>
+<td>Mrz region not found</td>
+</tr>
+<tr>
+<td>0x0007</td>
+<td>Library lazy finished</td>
+</tr>
+<tr>
+<td>0x0008</td>
+<td>Error initializing IQA library</td>
+</tr>
+<tr>
+<td>0x0009</td>
+<td>Error initializing Engine</td>
+</tr>
+<tr>
+<td>0x0010</td>
+<td>Error initializing OCR</td>
+</tr>
+<tr>
+<td>0x0101</td>
+<td>Architecture not supported</td>
+</tr>
+<tr>
+<td>0x0102</td>
+<td>Operating system not supported</td>
+</tr>
+<tr>
+<td>0x0103</td>
+<td>App permissions has been denied</td>
+</tr>
+<tr>
+<td>0x0201</td>
+<td>The license is empty</td>
+</tr>
+<tr>
+<td>0x0202</td>
+<td>The license is expired</td>
+</tr>
+<tr>
+<td>0x0203</td>
+<td>feature selected is not present</td>
+</tr>
+<tr>
+<td>0x0204</td>
+<td>The license format is not correct</td>
+</tr>
+<tr>
+<td>0x0205</td>
+<td>The license has not a valid signing hash</td>
+</tr>
+<tr>
+<td>0x0206</td>
+<td>The license has not a valid version</td>
+</tr>
+<tr>
+<td>0x0207</td>
+<td>The license has not a valid feature list</td>
+</tr>
+<tr>
+<td>0x0208</td>
+<td>The license has not a valid expiration date</td>
+</tr>
+<tr>
+<td>0x0209</td>
+<td>The license has not a valid creation timestamp</td>
+</tr>
+<tr>
+<td>0x0210</td>
+<td>The license has not a valid cache value</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h4 id="non-id-document-sdk-errors-list">Non-ID document sdk errors list</h4>
+<p>These errors list is returned by the TDI Non ID document captor as error explanation</p>
+<table>
+<thead>
+<tr>
+<th>errorCode</th>
+<th>errorMessage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0100</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>0x01000</td>
+<td>User cancellation!</td>
+</tr>
+<tr>
+<td>0x01001</td>
+<td>Time Out!</td>
+</tr>
+<tr>
+<td>0x01002</td>
+<td>Camera permission is set?</td>
+</tr>
+<tr>
+<td>0x01003</td>
+<td>Camera display failed: exception description</td>
+</tr>
+<tr>
+<td>0x01004</td>
+<td>No image scanned!</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h4 id="nfcmrz-sdk-errors-list">NFC/MRZ sdk errors list</h4>
+<p>These errors list is returned by the MRZ or NFC captor as error explanation.</p>
+<table>
+<thead>
+<tr>
+<th>NFC_MRZ_Code</th>
+<th>NFC_MRZ_Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0100</td>
+<td>No error found</td>
+</tr>
+<tr>
+<td>0x2000</td>
+<td>User cancellation!</td>
+</tr>
+<tr>
+<td>0x2001</td>
+<td>Time Out!</td>
+</tr>
+<tr>
+<td>0x2002</td>
+<td>Invalid MRZ input</td>
+</tr>
+<tr>
+<td>0x2003</td>
+<td>Exception description</td>
+</tr>
+<tr>
+<td>0x2004</td>
+<td>No NFC hardware on device</td>
+</tr>
+<tr>
+<td>0x2005</td>
+<td>Invalid MRZ capture!</td>
+</tr>
+<tr>
+<td>0x2006</td>
+<td>Document chip seems disabled!</td>
+</tr>
+<tr>
+<td>0x2007</td>
+<td>Connection lost!</td>
+</tr>
+<tr>
+<td>0xXXXX</td>
+<td>Some another codes can be returned depending of NFC file read error (should be APDU)  and depend on chip manufacturer and personalization</td>
+</tr>
+</tbody>
+</table>
+<p></br></p>
+<h4 id="contract-signature-sdk-errors-list">Contract / Signature sdk errors list</h4>
+<p>These errors list is returned by the Contract/Signature captor as error explanation.</p>
+<table>
+<thead>
+<tr>
+<th>Contract_Code</th>
+<th>Contract_Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9002</td>
+<td>Contract parsing exception: [message]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h4 id="voice-sdk-errors-list">Voice sdk errors list</h4>
+<p>These errors list is returned by the Voice captor as error explanation.</p>
+<table>
+<thead>
+<tr>
+<th>Voice_Code</th>
+<th>Voide_Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9004</td>
+<td>Exception: [message] during audio record</td>
+</tr>
+<tr>
+<td>9005</td>
+<td>Audio permission not granted</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

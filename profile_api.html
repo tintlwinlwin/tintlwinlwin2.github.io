@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Profile API - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem active">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="capture_tools_editable_response_capture.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="error_guide.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#profile-api-v20" class="nav-link">Profile API v2.0</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#get-profile-api" class="nav-link">Get Profile API</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#1-scenarios" class="nav-link">1. Scenarios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#2-captors" class="nav-link">2. Captors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#3-configs" class="nav-link">3. Configs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#4-theme" class="nav-link">4. Theme^</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#5-localization" class="nav-link">5. Localization^</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#6-dep-implementation" class="nav-link">6. DEP Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="profile-api-v20">Profile API v2.0</h1>
+<p>The <strong>Profile API</strong> has been added to the TDI solution to offer to the SDK integrators a strong personalization depending of the needs.  <strong>Profile API</strong> is an optional tool, the <strong>Scenario</strong> execution can be handle without it, but with it you would be able to make a smarter app to be adaptable to multiple <strong>Scenario</strong> or configuration if you deploy on different country or under different Branding with the same core Application.</p>
+<p>We will try here to describe this tools and some of the potential usage you could have.</p>
+<p></br></p>
+<h2 id="get-profile-api">Get Profile API</h2>
+<hr />
+<p>Use the Get Profile API after you set the Listener - see <a href="api.html" target="_blank">SDK API</a></p>
+<p> <pre><code class=kotlin>tdiMobileSdkInstance.getProfile(tdiServerURL: String, jwtToken: String, tenantId: String)
+</code></pre></p>
+<p>From this call you will receive from the Listener an object call <strong>TdiProfileInfo</strong></p>
+<p> <pre><code class=xml>data class TdiProfileInfo(
+    val version: String, 
+    val scenarios: MutableList&lt;Scenario&gt;, 
+    val captors: MutableMap&lt;String,ProfileCaptor&gt;, 
+    val configs: ProfileConfigs, 
+    val theme: MutableMap&lt;String,JsonElement&gt;?,
+    val localization: MutableMap&lt;String,String?&gt;
+)
+</code></pre></p>
+<p><u>version</u>: version de l'API</p>
+<p><strong>TdiProfileInfo</strong> is composed of 5 distinct elements:</p>
+<p></br></p>
+<h3 id="1-scenarios">1. Scenarios</h3>
+<p>This part will describe the list of scenario you have on your tenant.</p>
+<p>Here is what you can find on a Scenario:</p>
+<p> <pre><code class=kotlin>data class Scenario(
+    val idx: String, 
+    val name: String, 
+    val captures: MutableList&lt;ProfileCapture&gt;, 
+    val responses: MutableList&lt;ResponsesCategory&gt;?,
+    val infoData: MutableMap&lt;String, String?&gt;?
+)
+</code></pre></p>
+<p><u>idx</u>: An index reference of the scenario</p>
+<p><u>name</u>: Name of the Scenario</p>
+<p><u>captures</u>: The list of <strong>steps</strong> to be executed during the <strong>Scenario</strong> execution</p>
+<p><u>responses</u>: Is the List of all future data classified by type you will find in <strong>Scenario Result</strong>. </p>
+<p>There are grouped using <strong>ResponsesCategory</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-3><ul class="nav nav-tabs"><li class=nav-item><a class="nav-link active" href=#tab-group-3-0_Kotlin-panel role=tab id=tab-group-3-0_Kotlin-tab data-toggle=tab data-lang=Kotlin aria-controls=tab-group-3-0_Kotlin-panel aria-selected=true>Kotlin</a></li><li class=nav-item><a class="nav-link " href=#tab-group-3-1_kotlin-panel role=tab id=tab-group-3-1_kotlin-tab data-toggle=tab data-lang=kotlin aria-controls=tab-group-3-1_kotlin-panel aria-selected=false>Kotlin</a></li><li class=nav-item><a class="nav-link " href=#tab-group-3-2_kotlin-panel role=tab id=tab-group-3-2_kotlin-tab data-toggle=tab data-lang=kotlin aria-controls=tab-group-3-2_kotlin-panel aria-selected=false>Kotlin</a></li></ul><div class=tab-content><div id=tab-group-3-0_Kotlin-panel class="tab-pane show active" role=tabpanel aria-labelledby=tab-group-3-0_Kotlin-tab><pre><code class=Kotlin>data class ResponsesCategory(
+    val name: String, // Customer Details, Biometrie...
+    val fields: MutableList&lt;ResponsesCategoryField&gt; // The fields associated to it
+)
+</code></pre></div><div id=tab-group-3-1_kotlin-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-3-1_kotlin-tab><pre><code class=kotlin>data class ResponsesCategoryField(
+    val name: String, // Label of the field (Name, Surname...)
+    val field: Field&gt; // Properties of this field
+)
+</code></pre></div><div id=tab-group-3-2_kotlin-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-3-2_kotlin-tab><pre><code class=kotlin>data class Field(
+    val format: String, 
+    val isDisplayed: Boolean, 
+    val mandatory: Boolean, 
+    val pattern: String,
+    val editable: MutableList&lt;String?&gt;?
+)
+</code></pre></div></div></div>
+<p><u>infoData</u>: Is a set of usefull links (home page of your website, terms and conditions page...)</p>
+<p>The most important value for Mobile App will be <strong>captures</strong>, this will help you to Orchestrate the future steps to execute when you start a <strong>Scenario</strong>. The execution of Scenario steps is a based on a loop that you create and continually call with the <strong>step ID</strong> you want (Capture Passport, ID, Portrait...):</p>
+<p> <pre><code class=kotlin>session.resume(stepID)
+</code></pre></p>
+<ul>
+<li>
+<p>Without <strong>Profile API</strong>, you would need to hardcode each <strong>step</strong> in correct order to execute the <strong>Scenario</strong>. Easy to do, but integrator will need to implement full flow of each Scenario.</p>
+</li>
+<li>
+<p>With <strong>Profile API</strong> you can create an Orchestrator to execute any scenario. 
+More future proof, you will be able to execute multiple scenario using the same code and / or change Scenario on Server side without deploying again the application.</p>
+</li>
+</ul>
+<p>Scenario is composed from a List of ProfileCapture, this list is ordered to be executed from 0 to n</p>
+<h4 id="profile-capture">Profile Capture</h4>
+<p> <pre><code class=kotlin>  data class ProfileCapture(
+      val name: String, 
+      val isSkipAllowed: Boolean, 
+      val response: MutableList&lt;String?&gt;?, 
+      val steps: MutableList&lt;Capture&gt;
+  )
+</code></pre></p>
+<p><strong>ProfileCapture</strong> you can see it as a group which can contain 1..n steps with different rules for execution.</p>
+<p>​<u>isSkipAllowed</u>: Can skip the <strong>steps</strong> by using <em>session.update(stepID, empty input)</em> - see <strong>update</strong> API</p>
+<p>​<u>response</u>: Some steps will need information from Scenario Result, SDK use and for Captors made by the integrator.</p>
+<p> <pre><code class=kotlin>data class Capture(
+    val captures: MutableList&lt;MutableMap&lt;String,String&gt;&gt;
+)
+</code></pre></p>
+<ul>
+<li>1 step:</li>
+</ul>
+<p> <pre><code class=json>    steps:[{ waitForSelfie : selfie }]
+</code></pre></p>
+<p>No rules here, the step "waitForSelfie" will need to be executed</p>
+<p>To access it from Kotlin</p>
+<p> <pre><code class=kotlin>captureProfile.steps[0].captures[0]
+</code></pre></p>
+<ul>
+<li>x parallel steps:</li>
+</ul>
+<p> <pre><code class=json>    steps:[{
+        waitForPassport : passport, 
+        waitForIdCard : idCard
+    }]
+</code></pre></p>
+<p>Here you will need to execute "waitForPassport" OR "waitForIdCard"</p>
+<p>To access it from Kotlin</p>
+<p> <pre><code class=kotlin>captureProfile.steps[0].captures[0] // passport
+captureProfile.steps[0].captures[1] // idcard
+</code></pre></p>
+<ul>
+<li>x consecutive steps</li>
+</ul>
+<p> <pre><code class=json>    steps:[
+        {
+            waitForSignaturesMainContract : signaturesMainContract
+        },
+        {
+            waitForSignaturesAdditionalContract : signaturesAdditionalContract
+        }
+    ]
+</code></pre></p>
+<p>Here you will need to execute "waitForSignaturesMainContract" AND "waitForSignaturesAdditionalContract"</p>
+<p>To access it from Kotlin</p>
+<p> <pre><code class=kotlin>captureProfile.steps[1].captures[0] // signaturesMainContract
+captureProfile.steps[2].captures[0] // signaturesAdditionalContract
+</code></pre></p>
+<p><strong>e.g.</strong></p>
+<p> <pre><code class=json>captures:[
+    {
+        name : identity,
+        isSkipAllowed : false
+        steps:[{
+            waitForPassport : passport, 
+            waitForIdCard : idCard
+        }]
+    },
+    {
+        name : portrait,
+        isSkipAllowed : false
+        steps:[{waitForSelfie : selfie}]
+    },
+    {
+        name : contract,
+        isSkipAllowed : false
+        steps:[
+            {waitForSignaturesMainContract : signaturesMainContract},
+            {waitForSignaturesAdditionalContract : signaturesAdditionalContract}
+        ]
+    }
+]
+</code></pre></p>
+<p>Here, the Orchestration you need to do is:</p>
+<ol>
+<li>
+<p>waitForPassport OR waitForIdCard</p>
+</li>
+<li>
+<p>waitForSelfie</p>
+</li>
+<li>
+<p>waitForSignaturesMainContract AND waitForSignaturesAdditionalContract</p>
+</li>
+</ol>
+<p>With this, when you will start your Scenario your will be able to drive it following this logic.</p>
+<p>To access it from Kotlin</p>
+<p> <pre><code class=kotlin>captureProfile.steps[0].captures[0] // passport
+captureProfile.steps[0].captures[1] // idcard
+captureProfile.steps[1].captures[0] // selfie
+captureProfile.steps[2].captures[0] // signaturesMainContract
+captureProfile.steps[3].captures[0] // signaturesAdditionalContract
+</code></pre></p>
+<p></br></p>
+<h3 id="2-captors">2. Captors</h3>
+<p>Is a Map of settings for SDK to pre-set captures like Document Capture or Portrait...</p>
+<p>It's available for integrator in case you need to create your own <strong>Captors</strong> in your Application. For this kind of personalization please contact us for more details so we can help you on the construction of this custom.</p>
+<p> <pre><code class=kotlin>data class ProfileCaptor(
+    val pages: MutableList&lt;String&gt;?, 
+    val metadata: MutableMap&lt;String,MutableMap&lt;String,String?&gt;?&gt;?, 
+    val isUploadAllowed: Boolean,
+    val category: String?
+)
+</code></pre></p>
+<p><u>pages</u>: is to build <strong>images</strong> Input to be sent in server</p>
+<p><u>metadata</u>: is to build <strong>strings</strong> Input to be sent in server</p>
+<p><u>isUploadAllowed</u>: for a capture to be able to use upload functions</p>
+<p><u>category</u>: is the key word to trigger your Captor registered in the SDK automatically</p>
+<p>Can add more depending of the needs </p>
+<p></br></p>
+<h3 id="3-configs">3. Configs</h3>
+<p>Data accessible with a <em>MutableMap<String,String></em></p>
+<p>It contain a set of data to used for internal SDK configuration. Integrator can request new settings to be added here for the Application.</p>
+<p></br></p>
+<h3 id="4-theme">4. Theme^</h3>
+<p>JSON Data accessible with a <em>MutableMap<String,JsonElement></em></p>
+<p>All elements like icons, images, colors... to be used un the Application and SDK for customization. It's also possible to set different Themes. To access it you will call:</p>
+<p> <pre><code class=Kotlin>val jsonTheme: JsonElement = tdiProfileInfo.theme[&quot;default&quot;] //Name of your theme
+</code></pre></p>
+<p></br></p>
+<h3 id="5-localization">5. Localization^</h3>
+<p>JSON data accessible with a <em>MutableMap<String,String></em></p>
+<p>All the text in the device language if available. 
+Will return only one language. 
+To change the language after changing the phone language it will be needed to call <strong>Profile API</strong> again.</p>
+<p></br></p>
+<div class="admonition note">
+<p>^Usage mainly done for SDK for this Profile API version 2.0, we give the integrator the availability to access <strong>theme</strong> and <strong>localization</strong>, but as raw data. To be improved on next version to give tools to be available to find easily the customization data integrator need both will be able to be customized with your needs.</p>
+</div>
+<h3 id="6-dep-implementation">6. DEP Implementation</h3>
+<p>To use DEP, Profile API data is necessary.</p>
+<p>This is to ensure the certificate keys are properly read by the SDK.</p>
+<p>Ensure the valid keys exist in the Profile API -- configs: <code>k1</code></p>
+<p>Starting TDI SDK 2.0 profile API call is not mandatory to use DEP.</p>
+<p> <pre><code class>//Profile API JSON
+&quot;configs&quot;: {
+    ...
+    &quot;k1&quot;: &quot;xxxxxxxxx&quot;,
+    ...
+}
+</code></pre></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

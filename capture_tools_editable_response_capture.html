@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Thalesgroup">
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Editable Response Update - TDI SDK v2.0.0</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/hybrid.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/kotlin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/json.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">TDI SDK v2.0.0</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Overview</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="get_started_android.html" class="nav-link">Get Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="api.html" class="nav-link">API</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Capture Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="capture_tools_main.html" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_id_document_capture.html" class="dropdown-item">ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_face_liveness_capture.html" class="dropdown-item">Selfie Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_native_id_document_capture.html" class="dropdown-item">Native ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_signature_capture.html" class="dropdown-item">Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_contract_esignature_capture.html" class="dropdown-item">Web Contract / Signature Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_non_id_document_capture.html" class="dropdown-item">Non-ID Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_nfc_mrz_document_capture.html" class="dropdown-item">NFC / MRZ Document Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_voice_capture.html" class="dropdown-item">Voice Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_fingerprint_capture.html" class="dropdown-item">FingerPrint Capture</a>
+</li>
+                                    
+<li>
+    <a href="capture_tools_editable_response_capture.html" class="dropdown-item active">Editable Response Update</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="profile_api.html" class="nav-link">Profile API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="error_guide.html" class="nav-link">Error Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="security.html" class="nav-link">Security</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="fcm_integration.html" class="nav-link">FCM</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="capture_tools_fingerprint_capture.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="profile_api.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#editable-response-update" class="nav-link">Editable Response Update</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#update-task" class="nav-link">Update Task</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#profile-api-config-support" class="nav-link">Profile API - Config Support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="editable-response-update">Editable Response Update</h1>
+<p>This task will help you to update the Customer/User details response extracted from the Document captors (i.e. Document, MRC/NFC) and also the configured additional fields in scenario. Also this is not exactly like other captures (i.e Doc, MRZ etc..) which is implemented in SDK, it is based on the SDK consumer to design on its own effective way to use it.</p>
+<p><img alt="" src="img/editable_captor1.jpg" /> <img alt="" src="img/editable_captor2.jpg" /></br><img src="img\editable_captor4.png" style="zoom:26%;" /><img src="img\editable_captor5.png" style="zoom:26%;" /></p>
+<h2 id="implementation">Implementation</h2>
+<hr />
+<p>As described in the SDK API integration guide, the Session Result listener will give the Task Id for updating/editing result fields as <em>Editable Responses</em> category from the previously processed documents. Below is the sample JSON response format (for understanding) from SDK session result with processed/extracted results in hash map (see Result object in Integration guide to know more).</p>
+<p> <pre><code class=json>#Editable Response Task Sample
+[
+    TdiProfileInfo: null
+    Status: Waiting,
+    Task: [{
+            id: &quot;waitForEditCustDetails&quot;,
+            name: &quot;Waiting for Edited Customer Details&quot;,
+            status: &quot;Waiting&quot;,
+            category: &quot;Editable Responses&quot;
+        }
+    ],
+    Result: [
+        code: null,
+        message: null,
+        description: [
+            &quot;fullName&quot;: &quot;Tom Jerry&quot;,
+            .
+            .
+            &quot;emailAddress&quot;: &quot;&quot;,
+            &quot;phoneNumber&quot;: &quot;&quot;,
+            .
+            .
+        ]
+    ]
+]
+</code></pre></p>
+<h3 id="update-task">Update Task</h3>
+<p>From the above SDK response TaskId will be retrieved to update the session and the user can update the necessary fields value in the Result hash map. </p>
+<p>Format for the editable field key should be as <strong>metadata_*<key_of_result_field_to_be_edited>*</strong> for example, if you want to edit phoneNumber value from the above result it should be like <em>metadata_phoneNumber</em>. Below is the sample of updating the Editable Response field.</p>
+<p><strong>Update Editable Response</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><ul class="nav nav-tabs"><li class=nav-item><a class="nav-link active" href=#tab-group-1-0_kotlin-panel role=tab id=tab-group-1-0_kotlin-tab data-toggle=tab data-lang=kotlin aria-controls=tab-group-1-0_kotlin-panel aria-selected=true>Kotlin</a></li><li class=nav-item><a class="nav-link " href=#tab-group-1-1_java-panel role=tab id=tab-group-1-1_java-tab data-toggle=tab data-lang=java aria-controls=tab-group-1-1_java-panel aria-selected=false>Java</a></li></ul><div class=tab-content><div id=tab-group-1-0_kotlin-panel class="tab-pane show active" role=tabpanel aria-labelledby=tab-group-1-0_kotlin-tab><pre><code class=kotlin>//Input interface class.
+data class InputImpl(override val pages: MutableMap&lt;String, String&gt;) : Input, Serializable
+
+var editedFields = mutableMapOf&lt;String, String&gt;()
+editedFields.put(&quot;metadata_phoneNumber&quot;,&quot;+1 123456789&quot;)
+editedFields.put(&quot;metadata_emailAddress&quot;,&quot;demoscenario@thales.com&quot;)
+
+//Get the current session and update editable response fields.
+session?.update(&quot;waitForEditCustDetails&quot;, InputImpl(editedFields))
+</code></pre></div><div id=tab-group-1-1_java-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-1-1_java-tab><pre><code class=java>final Map&lt;String, String&gt; editedFields = new HashMap&lt;&gt;();
+editedFields.put(&quot;metadata_phoneNumber&quot;, &quot;+1 123456789&quot;);
+editedFields.put(&quot;metadata_emailAddress&quot;, &quot;demoscenario@thales.com&quot;);
+
+//Get the current session and update editable response fields.
+if (session!= null) {
+     session.update(&quot;waitForEditCustDetails&quot;, new Input() {
+          @NotNull
+          @Override
+          public Map&lt;String, String&gt; getPages() {
+               return editedFields;
+          }
+     });
+}
+</code></pre></div></div></div>
+<p>See SDK integration guide to know about handling session.</p>
+<p></br></p>
+<p>Below sample will show if the integrator don't want to to update any of the response field.</p>
+<p><strong>No Updates in Response Fields</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-2><ul class="nav nav-tabs"><li class=nav-item><a class="nav-link active" href=#tab-group-2-0_kotlin-panel role=tab id=tab-group-2-0_kotlin-tab data-toggle=tab data-lang=kotlin aria-controls=tab-group-2-0_kotlin-panel aria-selected=true>Kotlin</a></li><li class=nav-item><a class="nav-link " href=#tab-group-2-1_java-panel role=tab id=tab-group-2-1_java-tab data-toggle=tab data-lang=java aria-controls=tab-group-2-1_java-panel aria-selected=false>Java</a></li></ul><div class=tab-content><div id=tab-group-2-0_kotlin-panel class="tab-pane show active" role=tabpanel aria-labelledby=tab-group-2-0_kotlin-tab><pre><code class=kotlin>data class InputImpl(override val pages: MutableMap&lt;String, String&gt;) : Input, Serializable
+
+var editedFields = mutableMapOf&lt;String, String&gt;() //Create an empty map. 
+
+//Get the current session and update editable response fields.
+session?.update(&quot;waitForEditCustDetails&quot;, InputImpl(editedFields))
+</code></pre></div><div id=tab-group-2-1_java-panel class="tab-pane " role=tabpanel aria-labelledby=tab-group-2-1_java-tab><pre><code class=java>final Map&lt;String, String&gt; editedFields = new HashMap&lt;&gt;();
+
+//Get the current session and update editable response fields.
+if (session!= null) {
+     session.update(&quot;waitForEditCustDetails&quot;, new Input() {
+          @NotNull
+          @Override
+          public Map&lt;String, String&gt; getPages() {
+               return editedFields;
+          }
+     });
+}
+</code></pre></div></div></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the user want to skip the editable response task, the current session update should be invoked as in above code sample, then only the session management will move to next task (for example Contract Signature etc..).</p>
+</div>
+<p></br></p>
+<h3 id="profile-api-config-support">Profile API - Config Support</h3>
+<p>Profile API is an optional way to configure the scenario flow and additional settings, here we are not going to discuss about Profile API but will see the supporting features related to Editable Response. </p>
+<p>To know how to request for Profile API see <a href="profile_api.html" target="_blank">here</a>.</p>
+<p>Through Profile API we can get the Scenario's responses fields as categorized based on the result type to handle. Below is the partial sample response.</p>
+<p> <pre><code class=json>1.TdiProfileInfo: [
+2.        .
+3.        scenarios: [{
+4.            ..
+5.            }, {
+6.                Scenario: [
+7.                   idx: ..
+8.                    name: ..
+9.                    captures: [
+10.                    ..
+11.                        identity: [..]
+12.                        editCustDetails: [
+13.                            name: ..
+14.                            isSkipAllowed: ..
+15.                            steps: [
+16.                                &quot;waitForEditCustDetails&quot;: &quot;editCustDetails&quot;
+17.                            ]
+18.                        responses: [..]
+19.                ]
+20.                ..
+21.                ..
+22.        ]
+23.        responses: [
+24.            ..
+25.            VerifiResults: [..]
+26.            custDetails: [
+27.                ..
+28.                bithDate: [
+29.                    isDisplayed: true,
+30.                    format: &quot;text&quot;,
+31.                    editable: null
+32.                ],
+33.                phoneNumber: [
+34.                    isDisplayed: true,
+35.                    mandatory: true,
+36.                    pattern: &quot;^\+[1-9]{1}[0-9]{3,14}$&quot;,
+37.                    format: &quot;text&quot;,
+38.                    editable: [
+39.                        &quot;waitForEditCustDetails&quot;
+40.                    ]
+41.                ]
+42.                ..
+43.                ..
+44.            ]
+45.            biometrics: [..]
+46.        ..
+47.        ]
+48.        ],
+49.    }, {
+50.    ..
+51.    }]
+52.    .
+53.    .
+54.    captors: [
+55.        ..
+56.        ..
+57.        editCustDetails: [
+58.            pages: [..],
+59.            metadata: [
+60.                ..
+61.                ..
+62.            ],
+63.            isUploadAllowed: false,
+64.            ..
+65.            ..
+66.        ]
+67.        ..
+68.        ..
+69.    ]
+70.]
+</code></pre></p>
+<p>User can edit the customer details based on the <em>editable</em> value (Line no: 23) in responses and the choice of display to user based on the <em>isDisplayed</em> field (Line no: 29 or 34). You can set field editable based on the <em>editable</em> key (Line no: 38) which let you know at which step you can update this field. You can enforce or validate the edited value with a regular expression(Regex) pattern available below (Line no: 36 for <em>phoneNumber</em>) and check if the field is Mandatory to be filled  (Line no: 35).</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>All Rights Reserved, this document is provided in confidence. No part of it may be reproduced or communicated externally without the written permission of Thalesgroup. The information in this document is confidential and may be legally privileged. Access to its contents by anyone else is unauthorized; any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
